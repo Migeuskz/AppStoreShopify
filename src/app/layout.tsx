@@ -22,8 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={lexend_deca.className} >
         <Header />
-        <Hero/>
-        <Description/>
 
         {children}
 
