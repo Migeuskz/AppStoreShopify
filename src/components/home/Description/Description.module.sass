@@ -1,44 +1,37 @@
 @import "_variables.sass"
     
 .Description
-    display: grid
-    grid-template-columns: auto 1fr
-    column-gap: 2.25rem
-    max-width: 1000px
-    margin: 6rem auto
-    padding: 2rem 2.5rem
-    border-radius: 1.375rem
-    align-items: center
-
-    &__button
-        background: transparent
-        border: none
-        cursor: pointer
-        &--border
-            img
-                border: 3px solid $main-contrast
-
-    &__imageContainer
-        position: relative
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 2.25rem
+  max-width: 1000px
+  margin: 6rem auto
+  padding: 2rem 2.5rem
+  border-radius: 1.375rem
+  &__button
+    background: transparent
+    border: none
+    cursor: pointer
+    &__border
+      img
+        border: 3px solid $main-contrast
+  &__imageContainer
+    position: relative
+    width: 500px
+    height: 300px
+    & > img
+        object-fit: cover
+        border-radius: 1rem
+        box-shadow: 0 0 4rem rgba(255, 255, 255, 0.2)
         width: 500px
         height: 300px
-        // margin: 1rem
-
-        & img
-            object-fit: cover
-            // justify-content: space-around
-            border-radius: 1.2rem
-            -webkit-box-shadow: 8px 6px 66px 3px rgba(252,252,252,0.79)
-            -moz-box-shadow: 8px 6px 66px 3px rgba(252,252,252,0.79)
-            box-shadow: 8px 6px 66px 3px rgba(252,252,252,0.79)
-
-    & h2
-        font-size: 3rem
-
-    & p
-        font-size: 2.5rem
-
-    & div
-        display: flex
-        flex-direction: column
-        justify-content: center
+  &__text
+    & > h2
+      font-size: 2rem
+      font-weight: 600
+      color: $color-secondary
+      margin: 0
+    & > p
+      font-size: 1.5rem
+      line-height: 1.75
+      color: $text-color
