@@ -1,3 +1,6 @@
+import { ProductsWrapper } from "app/components/Store/ProductsWrapper"
+import { getProducts } from "app/services/shopify"
+
 //todos los props en ts agregalos por interfaz
 interface CategoryProps {
   params: {
@@ -6,11 +9,10 @@ interface CategoryProps {
   }
 }
 
-export default function Category(props: CategoryProps) {
+export default async function Category(props: CategoryProps) {
+  const products = await getProducts()
   const { category } = props.params
   return (
-    <h1>
-      Categoria dinamica: {category}
-    </h1>
+    <ProductsWrapper products={products}/>
   )
 }
