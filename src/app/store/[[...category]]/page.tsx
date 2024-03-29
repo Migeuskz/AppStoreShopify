@@ -1,5 +1,5 @@
 import { ProductsWrapper } from "app/components/Store/ProductsWrapper"
-import { getCollections, getCollectionsProducts } from "app/services/shopify/collections"
+import { getCollections, getCollectionProducts } from "app/services/shopify/collections"
 import { getProducts } from "app/services/shopify/products"
 
 interface CategoriesProps {
@@ -17,7 +17,7 @@ export default async function Categories(props: CategoriesProps){
     const collections = await getCollections()
     if(categories?.length > 0) {
         const selectedCollectionId = collections.find((collection:any) => collection.handle === categories[0]).id
-        products = await getCollectionsProducts(selectedCollectionId)
+        products = await getCollectionProducts(selectedCollectionId)
     }else{
         products = await getProducts()
     }

@@ -18,11 +18,11 @@ export const getCollections = async () => {
     })
     return transformedCollections
   } catch (error) {
-    console.log(error)
+    console.log('hay un error' + error)
   }
 }
 
-export const getCollectionsProducts = async (id:string) => {
+export const getCollectionProducts = async (id:string) => {
   try {
     const response = await fetch(shopifyUrls.collections.products(id), {
       headers: new Headers({
@@ -32,6 +32,6 @@ export const getCollectionsProducts = async (id:string) => {
     const  {products} = await response.json()
     return products
   } catch (error) {
-    console.log(error)
+    console.log('hay un error' + error)
   }
 }
